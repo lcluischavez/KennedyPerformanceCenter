@@ -1,0 +1,107 @@
+﻿@model IEnumerable<KennedyPerformanceCenter.Models.Service>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Services</h1>
+<image src="https://static.wixstatic.com/media/84770f_6332c17b690764e1c8a189cc43b10f24.jpg/v1/fill/w_960,h_244,al_c,q_80,usm_0.66_1.00_0.01/84770f_6332c17b690764e1c8a189cc43b10f24.webp" alt="Product Image Unavailable" width="100%" height="100%" />
+<hr />
+<div>
+    <div>
+        At Kennedy Performance Center we can do it all! Schedule a time to get your car modified the way you have always wanted or let us take care of the maintenance needs to keep it running like new!
+    </div>
+    <br />
+    <button>
+        <a href="tel:6158647110">CALL TO BOOK</a>
+    </button>
+    <br />
+</div>
+<hr />
+<div>
+    <div id="maintanance">
+        <h2>
+            Repairs & Maintanance
+        </h2>
+        <div>
+            Our ASE certified techs can take care of all your regular maintenace needs. We sell all OEM parts
+            and use the highest quality oils as well as offer aftermarket parts.
+            Whether your have a boost leak or you need your engine walnut blasted we can take care of it.
+        </div>
+        <br />
+        <image class="serviceImage" src="https://dealerinspire-image-library-prod.s3.us-east-1.amazonaws.com/images/4ABy75EXgYJlwCwrQyJFTGqUpZf9q8XIWFRjSQxX.jpg" alt="Product Image Unavailable" width="80%" height="auto"></image>
+    </div>
+
+    <br />
+
+    <div id="modifications">
+        <h2>
+            Modifications & Installations
+        </h2>
+        <div>
+            We are a vendor for companies like VRSF, Modbargains, and Burger Motorsports.
+            We keep many of the N54/N55 performance parts in stock. Our full service center can modifiy
+            your BMW any way you want it from intakes to suspensions to upgraded turbos. Let us know what
+            your looking to do and we can make it happen!
+        </div>
+        <br />
+        <image class="serviceImage" src="https://farm2.staticflickr.com/1811/44018850061_909a47f05a_c.jpg" alt="Product Image Unavailable" width="80%" height="auto"></image>
+    </div>
+
+    <br />
+
+    <div id="tuning">
+        <h2>
+            Tuning
+        </h2>
+        <div>
+            At Kennedy Performance Center we
+            offer a variety of tunes including Burger
+            Motorsports JB4, MHD, Protuning Freaks Bootmod3, and work with several
+            tuners for custom tunes.
+        </div>
+        <br />
+        <image class="serviceImage" src="https://www.domesticboost.com/images/imported/2020/09/screenshot2020090917_04_09-1.jpg" alt="Product Image Unavailable" width="80%" height="auto"></image>
+
+    </div>
+
+</div>
+
+<hr />
+<br />
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>
+                    <image src="@Html.DisplayFor(modelItem => item.ImagePath)" alt="Product Image Unavailable" width="220" height="150" />
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

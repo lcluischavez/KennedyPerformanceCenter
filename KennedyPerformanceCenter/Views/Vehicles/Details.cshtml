@@ -1,0 +1,75 @@
+﻿@model KennedyPerformanceCenter.Models.Vehicle
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<image src="@Html.DisplayFor(model => model.ImagePath)" alt="Product Image Unavailable" width="520" height="350" />
+
+<h1>
+    @Html.DisplayFor(model => model.Year) @Html.DisplayFor(model => model.Make) @Html.DisplayFor(model => model.Model)
+</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Color)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Color)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Miles)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Miles)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TransmissionTypeId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TransmissionType.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EngineTypeId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EngineType.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DrivetrainTypeId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DrivetrainType.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.VIN)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.VIN)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StockNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StockNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
